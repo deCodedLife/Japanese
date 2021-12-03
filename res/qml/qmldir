@@ -1,0 +1,3 @@
+module qml
+
+singleton Presets 1.0 Presets.qml

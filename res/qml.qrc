@@ -1,0 +1,33 @@
+<RCC>
+    <qresource prefix="/">
+        <file>qml/Navigation/BottomNavigation.qml</file>
+        <file>qml/main.qml</file>
+        <file>qml/Presets.qml</file>
+        <file>qtquickcontrols2.conf</file>
+        <file>qml/Components/Card.qml</file>
+        <file>qml/qmldir</file>
+        <file>qml/Pages/QuizPage.qml</file>
+        <file>qml/Pages/LearningPage.qml</file>
+        <file>qml/Navigation/PageData.qml</file>
+        <file>qml/Navigation/BottomNavBarItem.qml</file>
+        <file>qml/Pages/SettingsPage.qml</file>
+        <file>qml/Pages/GreetingPage.qml</file>
+        <file>qml/Components/CustomProgressBar.qml</file>
+        <file>qml/Pages/Training.qml</file>
+        <file>qml/Pages/SelectionsPage.qml</file>
+    </qresource>
+    <qresource prefix="/Images">
+        <file>img/Pages/test.svg</file>
+        <file>img/icons/book_white_24dp.svg</file>
+        <file>img/icons/calendar_today_white_24dp.svg</file>
+        <file>img/icons/class_white_24dp.svg</file>
+        <file>img/icons/g_translate_white_24dp.svg</file>
+        <file>img/icons/quiz_white_24dp.svg</file>
+        <file>img/icons/settings_white_24dp.svg</file>
+        <file>img/icons/translate_white_24dp.svg</file>
+        <file>img/icons/play_circle_white_24dp.svg</file>
+        <file>img/icons/checklist_rtl_white_24dp.svg</file>
+        <file>img/icons/note_alt_white_24dp.svg</file>
+        <file>img/icons/school_white_24dp.svg</file>
+    </qresource>
+</RCC>
