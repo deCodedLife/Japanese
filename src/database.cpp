@@ -11,6 +11,7 @@ void Database::configure()
     initDatabase();
     loadStats();
     loadUserData();
+    loadTopics();
 }
 
 void Database::addWord(QJsonObject w)
@@ -183,6 +184,33 @@ void Database::loadStats()
     db.close();
 }
 
+void Database::loadTopics()
+{
+    if ( db.open() == false )
+    {
+        qDebug() << "[ERROR] Can't load topics cause: " << db.lastError();
+        return;
+    }
+
+    QList<Topic> topics;
+    QSqlQuery query;
+    query.prepare("select * from Topics");
+    query.exec();
+
+    while (query.next())
+    {
+        Topic temp;
+
+        temp.id = query.value(0).toInt();
+        temp.name = query.value(1).toString();
+
+        topics.append(temp);
+    }
+
+    emit topicsLoaded(topics);
+    db.close();
+}
+
 void Database::createStat()
 {
     if ( db.open() == false )
@@ -282,6 +310,9 @@ void Database::initDatabase()
     query.exec();
 
     query.prepare(CREATE_DB_SELECTIONS);
+    query.exec();
+
+    query.prepare(CREATE_DB_TOPICS);
     query.exec();
 
     db.close();

@@ -15,6 +15,7 @@
         <file>qml/Components/CustomProgressBar.qml</file>
         <file>qml/Pages/Training.qml</file>
         <file>qml/Pages/SelectionsPage.qml</file>
+        <file>qml/Pages/TopicsPage.qml</file>
     </qresource>
     <qresource prefix="/Images">
         <file>img/Pages/test.svg</file>

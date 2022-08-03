@@ -11,9 +11,11 @@ SOURCES += \
         src/main.cpp \
         src/network.cpp \
         src/quick/stats.cpp \
+        src/quick/topics.cpp \
         src/quick/updater.cpp \
         src/quick/userinfo.cpp \
         src/types/stat.cpp \
+        src/types/topic.cpp \
         src/types/userdata.cpp \
         src/types/word.cpp
 
@@ -50,8 +52,10 @@ HEADERS += \
     src/database.h \
     src/network.h \
     src/quick/stats.h \
+    src/quick/topics.h \
     src/quick/updater.h \
     src/quick/userinfo.h \
     src/types/stat.h \
+    src/types/topic.h \
     src/types/userdata.h \
     src/types/word.h

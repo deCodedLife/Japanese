@@ -6,6 +6,7 @@
 
 #include "database.h"
 #include "quick/stats.h"
+#include "quick/topics.h"
 #include "quick/updater.h"
 #include "quick/userinfo.h"
 int main(int argc, char *argv[])
@@ -20,6 +21,8 @@ int main(int argc, char *argv[])
     UserInfo *user = new UserInfo();
     Stats *stats = new Stats();
 
+    Topics *topics = new Topics();
+
     QObject::connect(updater, &Updater::wordsChanged, db, &Database::addWords);
 
     QObject::connect(db, &Database::userLoaded, user, &UserInfo::setupData);
@@ -31,6 +34,8 @@ int main(int argc, char *argv[])
 
     QObject::connect(db, &Database::statsLoaded, stats, &Stats::setStatistic);
     QObject::connect(db, &Database::statLoaded, stats, &Stats::setStat);
+
+    QObject::connect(db, &Database::topicsLoaded, topics, &Topics::UpdateTopics);
 
     db->configure();
 
@@ -48,6 +53,7 @@ int main(int argc, char *argv[])
     ctx->setContextProperty("STATS", stats);
     ctx->setContextProperty("DATABASE", db);
     ctx->setContextProperty("UPDATER", updater);
+    ctx->setContextProperty("TOPICS", topics);
     bool turnedOn = true;
     ctx->setContextProperty("isProgressVisible", turnedOn);
 
